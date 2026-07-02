@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Clima {
+    - temperatura: Double
+    - humedad: Integer
+
+    + esCondicionPeligrosa(): Boolean
+}
+
+class RegistroClima {
+    - fecha: LocalDateTime
+    - clima: Clima
+    - generoAlerta: Boolean
+}
+
+RegistroClima --> Clima
+
+@enduml
