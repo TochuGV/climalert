@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.ddsi.climalert.models.entities;
+package ar.edu.utn.frba.ddsi.climalert.models.entities.clima;
 
 import lombok.Getter;
 import lombok.Setter;

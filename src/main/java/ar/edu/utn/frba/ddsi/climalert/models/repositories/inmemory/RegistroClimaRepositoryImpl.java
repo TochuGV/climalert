@@ -1,6 +1,6 @@
 package ar.edu.utn.frba.ddsi.climalert.models.repositories.inmemory;
 
-import ar.edu.utn.frba.ddsi.climalert.models.entities.RegistroClima;
+import ar.edu.utn.frba.ddsi.climalert.models.entities.clima.RegistroClima;
 import ar.edu.utn.frba.ddsi.climalert.models.repositories.RegistroClimaRepository;
 import org.springframework.stereotype.Repository;
 

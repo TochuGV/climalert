@@ -2,8 +2,8 @@ package ar.edu.utn.frba.ddsi.climalert.mappers;
 
 import ar.edu.utn.frba.ddsi.climalert.dto.ClimaActualResponseDTO;
 import ar.edu.utn.frba.ddsi.climalert.dto.ClimaResponseDTO;
-import ar.edu.utn.frba.ddsi.climalert.models.entities.Clima;
-import ar.edu.utn.frba.ddsi.climalert.models.entities.RegistroClima;
+import ar.edu.utn.frba.ddsi.climalert.models.entities.clima.Clima;
+import ar.edu.utn.frba.ddsi.climalert.models.entities.clima.RegistroClima;
 import org.springframework.stereotype.Component;
 
 @Component

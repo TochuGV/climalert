@@ -1,6 +1,6 @@
 package ar.edu.utn.frba.ddsi.climalert.models.repositories;
 
-import ar.edu.utn.frba.ddsi.climalert.models.entities.RegistroClima;
+import ar.edu.utn.frba.ddsi.climalert.models.entities.clima.RegistroClima;
 
 import java.util.List;
 import java.util.Optional;
