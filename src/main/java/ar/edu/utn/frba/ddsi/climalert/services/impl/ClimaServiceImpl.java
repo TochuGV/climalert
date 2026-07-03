@@ -5,12 +5,13 @@ import ar.edu.utn.frba.ddsi.climalert.dto.ClimaResponseDTO;
 import ar.edu.utn.frba.ddsi.climalert.mappers.ClimaMapper;
 import ar.edu.utn.frba.ddsi.climalert.models.entities.RegistroClima;
 import ar.edu.utn.frba.ddsi.climalert.models.repositories.RegistroClimaRepository;
+import ar.edu.utn.frba.ddsi.climalert.services.ClimaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ClimaServiceImpl {
+public class ClimaServiceImpl implements ClimaService {
   private final WeatherApiRestClient weatherClient;
   private final ClimaMapper mapper;
   private final RegistroClimaRepository repository;
