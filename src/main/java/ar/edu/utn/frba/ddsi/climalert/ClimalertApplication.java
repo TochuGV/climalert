@@ -8,7 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class ClimalertApplication {
   public static void main(String[] args) {
-      SpringApplication.run(ClimalertApplication.class, args);
-    }
+    SpringApplication.run(ClimalertApplication.class, args);
   }
 }
