@@ -4,9 +4,11 @@ import ar.edu.utn.frba.ddsi.climalert.adapters.CorreoAdapter;
 import ar.edu.utn.frba.ddsi.climalert.models.entities.notificacion.Notificacion;
 import ar.edu.utn.frba.ddsi.climalert.models.entities.notificacion.ResultadoEnvio;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConditionalOnProperty(name = "notificaciones.proveedor", havingValue = "mock", matchIfMissing = true)
 @RequiredArgsConstructor
 public class MockCorreoAdapter implements CorreoAdapter {
   private final MockConnector adaptee;
