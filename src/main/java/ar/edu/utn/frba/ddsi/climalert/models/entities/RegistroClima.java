@@ -1,11 +1,14 @@
 package ar.edu.utn.frba.ddsi.climalert.models.entities;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
 public class RegistroClima {
+  @Setter
+  private Long id;
   private final LocalDateTime fecha;
   private final Clima clima;
   private final boolean generoAlerta;
