@@ -14,6 +14,61 @@ class RegistroClima {
     - generoAlerta: Boolean
 }
 
-RegistroClima --> Clima
+record Notificacion {
+    - destinatario: String
+    - mensaje: String
+}
+
+record ResultadoEnvio {
+    + exito(): ResultadoEnvio
+    + falla(motivo: String): ResultadoEnvio
+}
+
+class Notificador {
+    - adapter: CorreoAdapter
+
+    + notificarAlerta(registroClima: RegistroClima, destinatarios: List<String>): void
+}
+
+interface CorreoAdapter {
+    + enviar(notificacion: Notificacion): ResultadoEnvio
+}
+
+class SendGridCorreoAdapter {
+    - adaptee: SendGridConnector
+
+    + enviar(notificacion: Notificacion): ResultadoEnvio
+}
+
+class SendGridConnector {
+
+    + enviarCorreoElectronico(destinatario: String, mensaje: String): void
+}
+
+class MockCorreoAdapter {
+    - adaptee: MockConnector
+
+    + enviar (notificacion: Notificacion): ResultadoEnvio
+}
+
+class MockConnector {
+
+    + simularEnvio(destinatario: String, mensaje: String): void
+}
+
+RegistroClima -> Clima
+Notificador .> RegistroClima
+Notificador --> CorreoAdapter
+
+CorreoAdapter ..> Notificacion
+CorreoAdapter .> ResultadoEnvio
+
+ResultadoEnvio .> ResultadoEnvio
+
+CorreoAdapter <|.. SendGridCorreoAdapter
+CorreoAdapter <|.. MockCorreoAdapter
+
+MockCorreoAdapter --> MockConnector
+SendGridCorreoAdapter --> SendGridConnector
 
 @enduml
