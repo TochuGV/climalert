@@ -20,7 +20,10 @@ public class ClimaServiceImpl implements ClimaService {
   private final RegistroClimaRepository repository;
   private final Notificador notificador;
 
-  private final List<String> destinatarios = List.of("tvallejos@frba.utn.edu.ar");
+  private final List<String> destinatarios = List.of(
+    "admin@clima.com",
+    "emergencias@clima.com",
+    "meteorologia@clima.com");
 
   public void procesarClimaActual() {
     ClimaResponseDTO dto = weatherClient.buscarClimaActual();
