@@ -11,7 +11,6 @@ public class Clima {
   private final Integer humedad;
 
   public boolean esCondicionPeligrosa() {
-    //return this.temperatura > 35.0 && this.humedad > 60;
-    return true;
+    return this.temperatura > 35.0 && this.humedad > 60;
   }
 }
