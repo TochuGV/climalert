@@ -1,17 +1,24 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+class RegistroClima {
+    - fecha: LocalDateTime
+    - clima: Clima
+    - generoAlerta: Boolean
+}
+
 class Clima {
+    - ubicacion: Ubicacion
     - temperatura: Double
     - humedad: Integer
 
     + esCondicionPeligrosa(): Boolean
 }
 
-class RegistroClima {
-    - fecha: LocalDateTime
-    - clima: Clima
-    - generoAlerta: Boolean
+record Ubicacion {
+    - nombre: String
+    - region: String
+    - pais: String
 }
 
 record Notificacion {
@@ -68,11 +75,12 @@ class WeatherApiAdapter {
 }
 
 class WeatherApiRestClient {
-    
+
     + buscarClimaActual()
 }
 
 RegistroClima -> Clima
+Clima -> Ubicacion
 Notificador .> RegistroClima
 Notificador --> CorreoAdapter
 
