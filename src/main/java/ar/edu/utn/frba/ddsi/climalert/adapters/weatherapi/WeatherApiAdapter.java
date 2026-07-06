@@ -16,7 +16,12 @@ public class WeatherApiAdapter implements ProveedorClimaAdapter {
 
   @Override
   public RegistroClima obtenerClimaActual() {
-    ClimaResponseDTO dto = weatherClient.buscarClimaActual();
-    return mapper.toEntity(dto);
+    try {
+      ClimaResponseDTO dto = weatherClient.buscarClimaActual();
+      return mapper.toEntity(dto);
+    } catch (Exception e) {
+      System.out.println("Hubo un error al obtener el clima actual: " + e.getMessage());
+      return null;
+    }
   }
 }

@@ -21,6 +21,8 @@ public class WeatherApiRestClient {
       .queryParam("q", propiedades.getLocation())
       .build()
       .toUri();
-    return restTemplate.getForObject(uri, ClimaResponseDTO.class);
+    ClimaResponseDTO dto = restTemplate.getForObject(uri, ClimaResponseDTO.class);
+    if (dto == null) throw new RuntimeException("Respuesta nula de WeatherAPI para URI: " + uri);
+    return dto;
   }
 }
