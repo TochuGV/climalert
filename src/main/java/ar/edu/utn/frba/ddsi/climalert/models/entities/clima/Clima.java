@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public class Clima {
+  private final Ubicacion ubicacion;
   private final double temperatura;
   private final Integer humedad;
 
