@@ -48,12 +48,28 @@ class SendGridConnector {
 class MockCorreoAdapter {
     - adaptee: MockConnector
 
-    + enviar (notificacion: Notificacion): ResultadoEnvio
+    + enviar(notificacion: Notificacion): ResultadoEnvio
 }
 
 class MockConnector {
 
     + simularEnvio(destinatario: String, mensaje: String): void
+}
+
+interface ProveedorClimaAdapter {
+
+    + obtenerClimaActual(): RegistroClima
+}
+
+class WeatherApiAdapter {
+    - adaptee: WeatherApiRestClient
+
+    + obtenerClimaActual(): RegistroClima
+}
+
+class WeatherApiRestClient {
+    
+    + buscarClimaActual()
 }
 
 RegistroClima -> Clima
@@ -70,5 +86,9 @@ CorreoAdapter <|.. MockCorreoAdapter
 
 MockCorreoAdapter --> MockConnector
 SendGridCorreoAdapter --> SendGridConnector
+
+RegistroClima <.. ProveedorClimaAdapter
+ProveedorClimaAdapter <|.. WeatherApiAdapter
+WeatherApiAdapter --> WeatherApiRestClient
 
 @enduml
