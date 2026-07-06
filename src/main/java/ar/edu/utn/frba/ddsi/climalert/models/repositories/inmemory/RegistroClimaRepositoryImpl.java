@@ -15,15 +15,9 @@ public class RegistroClimaRepositoryImpl implements RegistroClimaRepository {
   private final AtomicLong idGenerator = new AtomicLong(1);
 
   @Override
-  public List<RegistroClima> findAll() {
-    return new ArrayList<>(registroClima);
-  }
-
-  @Override
-  public Optional<RegistroClima> findById(Long id) {
-    return registroClima.stream()
-      .filter(r -> r.getId().equals(id))
-      .findFirst();
+  public Optional<RegistroClima> findLatest() {
+    if (registroClima.isEmpty()) return Optional.empty();
+    return Optional.of(registroClima.getLast());
   }
 
   @Override
