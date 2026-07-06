@@ -26,7 +26,7 @@ public class ClimaServiceImpl implements ClimaService {
   @Override
   public void procesarClimaActual() {
     RegistroClima nuevoRegistroClima = proveedorClima.obtenerClimaActual();
-    repository.save(nuevoRegistroClima);
+    if (nuevoRegistroClima != null) repository.save(nuevoRegistroClima);
   }
 
   @Override
