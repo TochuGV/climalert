@@ -10,8 +10,13 @@ import org.springframework.stereotype.Component;
 public class ClimaScheduler {
   private final ClimaService climaService;
 
-  @Scheduled(fixedRate = 10000)
+  @Scheduled(fixedRate = 300000)
   public void obtenerClimaActual() {
     this.climaService.procesarClimaActual();
+  }
+
+  @Scheduled(fixedRate = 60000)
+  public void notificarAlerta() {
+    this.climaService.procesarAlertas();
   }
 }
