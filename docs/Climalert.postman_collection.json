@@ -1,0 +1,68 @@
+{
+  "info": {
+    "_postman_id": "c0438f89-68ed-43c7-984f-92b6150af54a",
+    "name": "Climalert",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25207904"
+  },
+  "item": [
+    {
+      "name": "Obtener clima actual",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}?key={{apiKey}}&q=Argentina",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{apiKey}}"
+            },
+            {
+              "key": "q",
+              "value": "Argentina"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "apiKey",
+      "value": ""
+    }
+  ]
+}
