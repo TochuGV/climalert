@@ -23,7 +23,6 @@ public class ClimaServiceImpl implements ClimaService {
     "meteorologia@clima.com"
   );
 
-
   @Override
   public void procesarClimaActual() {
     RegistroClima nuevoRegistroClima = proveedorClima.obtenerClimaActual();
